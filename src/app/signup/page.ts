@@ -1,10 +1,8 @@
-"use client";
-import Link from "next/link";
-import React from "react";
-import { useRouter } from "next/navigation";
-import axios from "axios";
+"use Client"
 
+export default function Signuppage(){
 
-export default function signupPage(){
-
+    return {
+        <
+    }
 }
