@@ -19,7 +19,8 @@ export default function SignupPage(){
             <h1>Sign up</h1>
             <hr />
             <label htmlFor="username">username</label>
-            <input type="text" name="username" id="username" value={user.username} onChange={(e)=>setUser({...user,username:e.target.value})} />
+            <input type="text" name="username" id="username" value={user.username} onChange={(e)=>setUser({...user,username:e.target.value})}
+            className="p-2 border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600" />
         </div>
     )
 }
