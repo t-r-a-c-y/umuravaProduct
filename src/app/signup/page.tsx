@@ -10,6 +10,15 @@ export default function SignupPage() {
         username: "",
         password: "",
     });
+    const [isSigningUp,setIsSigningUp] = useState(false);
+
+    const toLoging = ()=>{
+        if(user.email >0 && user.username >0 && user.password>0){
+            setIsSigningUp(true)
+        }else{
+            setIsSigningUp(false);
+        }
+    }
 
     const onSignUp = ()=>{
 
