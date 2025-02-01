@@ -35,16 +35,6 @@ export default function SignupPage() {
                         placeholder="Enter your email"
                         className="p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-gray-600 text-black"
                     />
-                    <label htmlFor="username">Username</label>
-                    <input
-                        type="text"
-                        name="username"
-                        id="username"
-                        value={user.username}
-                        onChange={(e) => setUser({ ...user, username: e.target.value })}
-                        placeholder="Enter your username"
-                        className="p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-gray-600 text-black"
-                    />
                     <label htmlFor="username">Password</label>
                     <input
                         type="password"
@@ -56,9 +46,9 @@ export default function SignupPage() {
                         className="p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-gray-600 text-black"
                     />
                     <div className="text-center">
-                    <button onClick={onSignUp} className="bg-gray-500 hover:bg-gray-700 p-3 w-32">{buttonDisabled ? "No SignUp":"Sign Up"} </button>
+                    <button onClick={onLoginingIn} className="bg-gray-500 hover:bg-gray-700 p-3 w-32">Login</button>
                     </div>
-                    <Link href='/login'>Already have an account? Click on the login page</Link>
+                    <Link href='/signup'>Sign Up if you don't have and account?</Link>
                 </div>
             </div>
         </div>
