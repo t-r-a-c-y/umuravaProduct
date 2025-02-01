@@ -12,37 +12,17 @@ export default function SignupPage() {
         username: "",
         password: "",
     });
-    const [buttonDisabled,setButtonDisables] =useState(false);
-    const [loading, setLoading] =useState(false)
 
     
-    useEffect(()=>{
-        if(user.email.length >0 && user.password.length >0 && user.username.length){
-            setButtonDisables(false);
-        }else{
-            setButtonDisables(true);
-        }
-    },[user])
 
-    const onSignUp = async()=>{
-        try {
-            setLoading(true);
-             const response =await axios.post("/api/users/signup",user)      
-             console.log("signup successfull",response.data)
-             router.push      ("/login")
-        } catch (error:any) {
-
-            console.log("There is an error");
-            toast.error(error.message)
-        }finally{
-            setLoading(false);
-        }
+    const onLoginingIn = async()=>{
+        
     }
 
     return (
         <div className="min-h-screen flex items-center justify-center">
             <div className="text-center p-6  shadow-lg rounded-lg">
-                <h1 className="text-2xl font-bold mb-4">{loading?"Processing":"Signup" } </h1>
+                <h1 className="text-2xl font-bold mb-4">Login </h1>
               
                 <div className="flex flex-col gap-4 px-20 item-center">
                     <label htmlFor="username">Email</label>
