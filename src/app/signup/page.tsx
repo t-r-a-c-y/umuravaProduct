@@ -11,7 +11,8 @@ export default function SignupPage() {
         username: "",
         password: "",
     });
-    const [buttonDisabled,setButtonDisables] =useState(true);
+    const [buttonDisabled,setButtonDisables] =useState(false);
+    const [loading, setLoading] =useState(false)
 
     
     useEffect(()=>{
@@ -22,14 +23,18 @@ export default function SignupPage() {
         }
     },[user])
 
-    const onSignUp = ()=>{
-
+    const onSignUp = async()=>{
+        try {
+            
+        } catch (error) {
+            
+        }
     }
 
     return (
         <div className="min-h-screen flex items-center justify-center">
             <div className="text-center p-6  shadow-lg rounded-lg">
-                <h1 className="text-2xl font-bold mb-4">Sign up</h1>
+                <h1 className="text-2xl font-bold mb-4">{loading?"Processing":"Signup" } </h1>
               
                 <div className="flex flex-col gap-4 px-20 item-center">
                     <label htmlFor="username">Email</label>
