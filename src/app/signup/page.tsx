@@ -1,24 +1,26 @@
 "use client"
 import Link from "next/link"
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
 import axios from "axios"
 
 export default function SignupPage() {
+    const router = useRouter();
     const [user, setUser] = useState({
         email: "",
         username: "",
         password: "",
     });
-    const [isSigningUp,setIsSigningUp] = useState(false);
+    const [buttonDisabled,setButtonDisables] =useState(true);
 
-    const toLoging = ()=>{
-        if(user.email >0 && user.username >0 && user.password>0){
-            setIsSigningUp(true)
+    
+    useEffect(()=>{
+        if(user.email.length >0 && user.password.length >0 && user.username.length){
+            setButtonDisables(false);
         }else{
-            setIsSigningUp(false);
+            setButtonDisables(true);
         }
-    }
+    },[user])
 
     const onSignUp = ()=>{
 
@@ -60,7 +62,9 @@ export default function SignupPage() {
                         placeholder="Enter your password"
                         className="p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-gray-600 text-black"
                     />
-                    <button onClick={onSignUp} className="bg-gray-500 hover:bg-gray-700 p-3 w-32">Sign Up</button>
+                    <div className="text-center">
+                    <button onClick={onSignUp} className="bg-gray-500 hover:bg-gray-700 p-3 w-32">{buttonDisabled ? "No SignUp":"Sign Up"} </button>
+                    </div>
                     <Link href='/login'>Already have an account? Click on the login page</Link>
                 </div>
             </div>
